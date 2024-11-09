@@ -8,12 +8,12 @@ const questions = [
     { question: "Which of the following is the food additive that has been correlated with early puberty cases in girls?", options: ["pectinase", "parabens", "molecular sieve", "calcium aluminosilicate"], answer: 1 },
     { question: "Carrageenan functions in different food items as thickeners, emulsifiers, and preservatives. It is thought to have detrimental effects on _____ .", options: ["skin allergies", "heart diseases", "digestive health", "asthma attacks"], answer: 2 },
     { question: "Trans fat improves shelf-life and product quality in many kinds of processed foods. Several studies have associated high trans fat intake with a higher risk of _____ .", options: ["respiratory diseases", "neurological diseases", "hives", "heart diseases"], answer: 3 },
-    { question: "Cottonseed oil helps reduce 'bad cholesterol' and increases good cholesterol. The controversy surrounding cottonseed oil consumption is linked to _____ .", options: ["decreased sperm counts", "heart diseases", "intestinal ulcers", "skin rashes"], answer: 0 },
+    { question: "Cottonseed oil helps reduce “bad cholesterol” and increases good cholesterol. The controversy surrounding cottonseed oil consumption is linked to _____ .", options: ["decreased sperm counts", "heart diseases", "intestinal ulcers", "skin rashes"], answer: 1 },
     { question: "Monosodium Glutamate (MSG) has been used for decades as a food additive. MSG causes many adverse reactions EXCEPT _____ .", options: ["numbness", "facial pressure or tightness", "diabetes", "headache"], answer: 2 },
     { question: "Brain tumor is defined as the mass growth of abnormal cells in the brain. Which of the following food additives is linked to this serious health complication?", options: ["poly(vinyl acetate)", "catalase", "aspartame", "allyl cyclohexylpropionate"], answer: 2 },
     { question: "Tartrazine is the most frequently used yellow dye in drinks, sweets, ice cream, and desserts. As a food additive, it has been linked to _____ .", options: ["asthma attacks", "thyroid cancer", "brain tumor", "heart diseases"], answer: 0 },
-    { question: "Ulcer is a raw or sore spot in the lining of the intestine that is attached to the stomach. Growth of intestinal ulcers is associated with which of the following food additives?", options: ["carrageenan", "cottonseed oil", "MSG", "trans fat"], answer: 0 },
-    { question: "Anorexia is an eating disorder with an abnormally low body weight and an excessive fear of weight gain. Which of the following food additives is linked to anorexia?", options: ["parabens", "MSG", "guar gum", "cottonseed oil"], answer: 2 }
+    { question: "Ulcer is a raw or sore spot in the lining of the intestine that is attached to the stomach. Growth of intestinal ulcers is associated with which of the following food additives?", options: ["carrageenan", "cottonseed oil", "MSG", "trans fat"], answer: 3 },
+    { question: "Anorexia is an eating disorder with an abnormally low body weight and an excessive fear of weight gain. Which of the following food additives is linked to anorexia?", options: ["parabens", "MSG", "guar gum", "cottonseed oil"], answer: 1 }
 ];
 
 let currentQuestionIndex = 0;
@@ -109,8 +109,9 @@ function resetTimer() {
 }
 
 function displayCompletionMessage() {
-    questionContainer.classList.add("hidden");
     completionMessage.classList.remove("hidden");
+    questionContainer.classList.add("hidden");
+    hearts.forEach((heart) => heart.classList.add("hidden"));
 }
 
 loadQuestion();
