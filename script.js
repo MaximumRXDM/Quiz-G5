@@ -42,7 +42,7 @@ function loadQuestion() {
     }
 
     const questionObj = questions[currentQuestionIndex];
-    questionContainer.innerHTML = `<p>${questionObj.question}</p>`;
+    questionContainer.innerHTML = `<p id="question">${questionObj.question}</p>`;
     questionObj.options.forEach((option, index) => {
         const button = document.createElement("button");
         button.innerText = option;
@@ -63,13 +63,13 @@ function checkAnswer(selectedOption) {
         feedback.classList.remove("hidden");
         correctAnswerDisplay.querySelector("span").innerText = questionObj.options[questionObj.answer];
         correctAnswerDisplay.classList.remove("hidden");
+        nextButton.classList.remove("hidden");
     } else {
-        feedback.innerText = `Incorrect! Correct answer: ${questionObj.options[questionObj.answer]}`;
+        feedback.innerText = `Incorrect!`;
         feedback.classList.remove("hidden");
         loseLife();
+        nextButton.classList.add("hidden");
     }
-
-    nextButton.classList.remove("hidden");
 }
 
 function loseLife() {
@@ -87,10 +87,13 @@ function nextQuestion() {
     loadQuestion();
 }
 
-function startTimer() {
-    timeLeft = 20;
-    timerDisplay.innerText = `${timeLeft}s`;
+function displayCompletionMessage() {
+    completionMessage.classList.remove("hidden");
+    questionContainer.classList.add("hidden");
+    hearts.forEach((heart) => heart.classList.add("hidden"));
+}
 
+function startTimer() {
     timer = setInterval(() => {
         timeLeft--;
         timerDisplay.innerText = `${timeLeft}s`;
@@ -106,12 +109,6 @@ function resetTimer() {
     clearInterval(timer);
     timeLeft = 20;
     timerDisplay.innerText = `${timeLeft}s`;
-}
-
-function displayCompletionMessage() {
-    completionMessage.classList.remove("hidden");
-    questionContainer.classList.add("hidden");
-    hearts.forEach((heart) => heart.classList.add("hidden"));
 }
 
 loadQuestion();
