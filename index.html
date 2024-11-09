@@ -3,33 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Quiz</title>
+    <title>Food Additives Quiz</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="quiz-container">
-        <h1>Health Quiz</h1>
-        <div id="timer-container" class="timer-container">
-            <div id="timer" class="timer">20s</div>
+    <div id="quiz-container">
+        <div id="question-container"></div>
+        <div id="feedback" class="hidden"></div>
+        <div id="correct-answer" class="hidden"><strong>Correct Answer:</strong> <span></span></div>
+        <div id="timer-container">
+            <div id="timer-circle">
+                <span id="timer">20s</span>
+            </div>
         </div>
-        <div class="lives">
-            <img src="https://i.ibb.co/2hgzxhk/pngfind-com-minecraft-heart-png-697698.png" alt="Heart" class="heart" id="heart1">
-            <img src="https://i.ibb.co/2hgzxhk/pngfind-com-minecraft-heart-png-697698.png" alt="Heart" class="heart" id="heart2">
-            <img src="https://i.ibb.co/2hgzxhk/pngfind-com-minecraft-heart-png-697698.png" alt="Heart" class="heart" id="heart3">
-            <img src="https://i.ibb.co/2hgzxhk/pngfind-com-minecraft-heart-png-697698.png" alt="Heart" class="heart" id="heart4">
-            <img src="https://i.ibb.co/2hgzxhk/pngfind-com-minecraft-heart-png-697698.png" alt="Heart" class="heart" id="heart5">
+        <div id="hearts-container">
+            <img id="heart1" class="heart" src="https://i.ibb.co/2hgzxhk/pngfind-com-minecraft-heart-png-697698.png" alt="heart">
+            <img id="heart2" class="heart" src="https://i.ibb.co/2hgzxhk/pngfind-com-minecraft-heart-png-697698.png" alt="heart">
+            <img id="heart3" class="heart" src="https://i.ibb.co/2hgzxhk/pngfind-com-minecraft-heart-png-697698.png" alt="heart">
+            <img id="heart4" class="heart" src="https://i.ibb.co/2hgzxhk/pngfind-com-minecraft-heart-png-697698.png" alt="heart">
+            <img id="heart5" class="heart" src="https://i.ibb.co/2hgzxhk/pngfind-com-minecraft-heart-png-697698.png" alt="heart">
         </div>
-        <div id="question-container">
-            <!-- Question and options will be injected here by JavaScript -->
-        </div>
-        <div id="feedback" class="hidden">Correct Answer!</div>
-        <div id="correct-answer" class="hidden">Correct Answer: <span></span></div>
-        <button id="next-btn" class="hidden">Next</button>
-        <div id="completion-message" class="hidden">
-            <h2>Quiz Completed!</h2>
-            <p>Thank you for participating. Please check your answers!</p>
-        </div>
+        <button id="next-btn" class="hidden" onclick="nextQuestion()">Next Question</button>
+        <div id="completion-message" class="hidden">Quiz Complete!</div>
     </div>
-    <script src="script.js"></script>
+    <script src="quiz.js"></script>
 </body>
 </html>
