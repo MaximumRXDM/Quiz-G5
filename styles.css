@@ -1,4 +1,4 @@
-/* Basic styling and layout */
+/* Universal styling reset */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,57 +7,83 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f4f8;
+    background-image: url('https://www.chemistrybackgroundexample.com/yourimage.jpg'); /* Replace with a chosen chemistry-themed background image */
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     color: #333;
+    overflow: hidden;
 }
 
 .quiz-container {
-    background-color: #fff;
+    background: rgba(255, 255, 255, 0.9);
     padding: 2em;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 90%;
     max-width: 500px;
     text-align: center;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
 }
 
 h1 {
     color: #0078D7;
     margin-bottom: 20px;
-    font-size: 1.8em;
+    font-size: 2em;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* Lives section styling */
+/* Chemistry background animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Lives section */
 .lives {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    animation: popIn 1s ease-out;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
 .heart {
     width: 30px;
     height: 30px;
     margin: 0 5px;
+    transition: transform 0.3s;
+}
+
+.heart:hover {
+    transform: scale(1.1);
 }
 
 /* Question and options */
 #question-container p {
-    font-size: 1.2em;
+    font-size: 1.3em;
     margin-bottom: 20px;
+    color: #333;
 }
 
 .option-btn {
     display: block;
     width: 100%;
     margin: 8px 0;
-    padding: 10px;
+    padding: 12px;
     font-size: 1em;
     color: #fff;
-    background-color: #0078D7;
+    background: linear-gradient(45deg, #0078D7, #00BFFF);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -65,20 +91,15 @@ h1 {
 }
 
 .option-btn:hover {
-    background-color: #005ea6;
+    background: linear-gradient(45deg, #005ea6, #0078D7);
 }
 
 .option-btn:active {
-    transform: scale(0.98);
+    transform: scale(0.95);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Feedback and final score styling */
-#feedback {
-    color: #d9534f;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
+/* Shake animation */
 .shake {
     animation: shake-animation 0.4s ease;
 }
@@ -93,18 +114,35 @@ h1 {
     display: none;
 }
 
+/* Feedback and final score styling */
+#feedback {
+    color: #d9534f;
+    font-weight: bold;
+    margin-top: 10px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
 #final-score h2 {
     font-size: 1.5em;
     color: #0078D7;
     margin-bottom: 10px;
+    animation: popIn 1s ease-out;
 }
 
 #final-score p {
     font-size: 1.2em;
     color: #333;
+    animation: popIn 1s ease-out;
 }
 
 #score {
     font-weight: bold;
     color: #d9534f;
+    animation: pulse 1s infinite;
+}
+
+/* Pulse effect for score */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
