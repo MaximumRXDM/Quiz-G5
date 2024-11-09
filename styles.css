@@ -1,0 +1,110 @@
+/* Basic styling and layout */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+.quiz-container {
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+h1 {
+    color: #0078D7;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+/* Lives section styling */
+.lives {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.heart {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+}
+
+/* Question and options */
+#question-container p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.option-btn {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #0078D7;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.option-btn:hover {
+    background-color: #005ea6;
+}
+
+.option-btn:active {
+    transform: scale(0.98);
+}
+
+/* Feedback and final score styling */
+#feedback {
+    color: #d9534f;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.shake {
+    animation: shake-animation 0.4s ease;
+}
+
+@keyframes shake-animation {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+}
+
+.hidden {
+    display: none;
+}
+
+#final-score h2 {
+    font-size: 1.5em;
+    color: #0078D7;
+    margin-bottom: 10px;
+}
+
+#final-score p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+#score {
+    font-weight: bold;
+    color: #d9534f;
+}
