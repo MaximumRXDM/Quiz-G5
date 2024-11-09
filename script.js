@@ -95,9 +95,9 @@ function startTimer() {
         timeLeft--;
         timerDisplay.innerText = `${timeLeft}s`;
 
-        if (timeLeft === 0) {
+        if (timeLeft <= 0) {
             clearInterval(timer);
-            checkAnswer(null); // Auto-submit as incorrect after timer runs out
+            checkAnswer(-1); // Automatically treat as wrong answer when time runs out
         }
     }, 1000);
 }
