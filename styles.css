@@ -7,14 +7,22 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: linear-gradient(45deg, #ff6a00, #ff2a68, #8e44ad, #2c3e50);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
     color: #fff;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .quiz-container {
     width: 80%;
     max-width: 600px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
@@ -22,17 +30,29 @@ body {
 }
 
 h1 {
-    font-size: 2em;
-    color: #fff;
-    margin-bottom: 15px;
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
 /* Timer styling */
+.timer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
 .timer {
-    font-size: 1.2em;
-    color: #ff4d4d;
+    font-size: 1.5em;
+    color: #ffcc00;
     font-weight: bold;
-    margin-bottom: 10px;
+    padding: 15px;
+    border: 5px solid #ffcc00;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    text-align: center;
 }
 
 /* Heart/lives styling */
@@ -47,6 +67,7 @@ h1 {
     margin: 0 5px;
 }
 
+/* Option button styling */
 .option-btn {
     display: inline-block;
     margin: 10px;
@@ -75,6 +96,13 @@ h1 {
     color: #ffcc00;
 }
 
+#correct-answer {
+    font-size: 1.1em;
+    margin-top: 20px;
+    color: #2ecc71;
+}
+
+/* Hidden class for elements */
 .hidden {
     display: none;
 }
