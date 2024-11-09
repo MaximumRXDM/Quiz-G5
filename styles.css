@@ -1,19 +1,22 @@
 body {
     font-family: Arial, sans-serif;
-    background: url('https://i.ibb.co/tQvX4SH/chemistry-background.jpg') no-repeat center center fixed;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtOEVdRYUw__Vt3r6oCcMBY5ZXhvT0acKDVA&s') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    color: white;
+    color: #333; /* Dark text color for better contrast */
 }
 
 #quiz-container {
     text-align: center;
     width: 80%;
     max-width: 600px;
+    background: rgba(255, 255, 255, 0.8); /* Light background for readability */
+    padding: 20px;
+    border-radius: 10px;
 }
 
 button.option-btn {
@@ -25,6 +28,7 @@ button.option-btn {
     font-size: 16px;
     cursor: pointer;
     width: 100%;
+    border-radius: 5px;
 }
 
 button.option-btn:hover {
@@ -46,6 +50,7 @@ button.option-btn:hover {
     text-align: center;
     line-height: 40px;
     font-size: 20px;
+    color: white;
 }
 
 #feedback, #correct-answer, #next-btn, #completion-message {
@@ -64,4 +69,17 @@ button.option-btn:hover {
 #hearts img {
     width: 30px;
     margin: 5px;
+}
+
+/* Style for question text */
+#question {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Style for timer */
+#timer {
+    font-size: 20px;
+    color: white;
 }
