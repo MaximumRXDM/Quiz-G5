@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chemistry Quiz</title>
+    <title>Group 5 Presentation</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="quiz-container">
-        <div id="hearts">
-            <img id="heart1" src="https://i.ibb.co/2hgzxhk/pngfind-com-minecraft-heart-png-697698.png" alt="Heart">
-            <img id="heart2" src="https://i.ibb.co/2hgzxhk/pngfind-com-minecraft-heart-png-697698.png" alt="Heart">
-            <img id="heart3" src="https://i.ibb.co/2hgzxhk/pngfind-com-minecraft-heart-png-697698.png" alt="Heart">
-            <img id="heart4" src="https://i.ibb.co/2hgzxhk/pngfind-com-minecraft-heart-png-697698.png" alt="Heart">
-            <img id="heart5" src="https://i.ibb.co/2hgzxhk/pngfind-com-minecraft-heart-png-697698.png" alt="Heart">
+    <header>
+        <h1>Group 5 Presentation</h1>
+        <p>Website is made by: Daen Mandiel Angostura</p>
+    </header>
+    <div class="quiz-container">
+        <div id="timer" class="timer">
+            Time Left: <span id="timeLeft">20</span> seconds
         </div>
-        <div id="question-container">
-            <!-- Question and options will be dynamically added here -->
+        <div id="questionText" class="question"></div>
+        <div class="choices">
+            <button class="choices-btn">a</button>
+            <button class="choices-btn">b</button>
+            <button class="choices-btn">c</button>
+            <button class="choices-btn">d</button>
         </div>
-        <div id="timer-container">
-            <div id="timer-circle">
-                <p id="timer">20s</p>
-            </div>
+        <div id="result" class="result"></div>
+        <div class="hearts">
+            <img class="heart" src="https://i.ibb.co/KhFtdhr/pngfind-com-minecraft-heart-png-697698.png" alt="Heart" />
+            <img class="heart" src="https://i.ibb.co/KhFtdhr/pngfind-com-minecraft-heart-png-697698.png" alt="Heart" />
+            <img class="heart" src="https://i.ibb.co/KhFtdhr/pngfind-com-minecraft-heart-png-697698.png" alt="Heart" />
+            <img class="heart" src="https://i.ibb.co/KhFtdhr/pngfind-com-minecraft-heart-png-697698.png" alt="Heart" />
+            <img class="heart" src="https://i.ibb.co/KhFtdhr/pngfind-com-minecraft-heart-png-697698.png" alt="Heart" />
         </div>
-        <div id="feedback" class="hidden"></div>
-        <div id="correct-answer" class="hidden">
-            <p>Correct answer: <span></span></p>
-        </div>
-        <button id="next-btn" class="hidden" onclick="nextQuestion()">Next Question</button>
-        <div id="completion-message" class="hidden">
-            <p>Quiz completed!</p>
+        <div class="buttons">
+            <button id="nextButton">Next Question</button>
+            <button id="compensateButton">Compensate</button>
         </div>
     </div>
     <script src="script.js"></script>
