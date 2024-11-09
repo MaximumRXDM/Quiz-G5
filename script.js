@@ -92,7 +92,6 @@ const questions = [
 ];
 
 let currentQuestionIndex = 0;
-let hearts = document.querySelectorAll('.heart');
 let timeLeft = 20;
 let timer;
 
@@ -134,8 +133,7 @@ function checkAnswer(choice) {
     if (question.choices[choice] === question.correctAnswer) {
         question.answeredCorrectly = true;
         document.getElementById('result').textContent = "Correct!";
-        let heartsLeft = hearts.length - 1;
-        if (heartsLeft >= 0) hearts[heartsLeft].style.display = 'none';
+        updateHearts();
     } else {
         question.answeredCorrectly = false;
         document.getElementById('result').textContent = "Incorrect!";
@@ -145,9 +143,14 @@ function checkAnswer(choice) {
     document.getElementById('nextButton').style.display = 'block';
 }
 
+function updateHearts() {
+    let heartsLeft = hearts.length - 1;
+    if (heartsLeft >= 0) hearts[heartsLeft].style.display = 'none';
+}
+
 function compensate() {
     if (hearts.length > 0) {
-        hearts[hearts.length - 1].style.display = 'block';
+        hearts[hearts.length - 1].style.display = 'inline';
         questions[currentQuestionIndex].answeredCorrectly = false;
         document.getElementById('result').textContent = "Compensated!";
         document.getElementById('compensateButton').style.display = 'none';
