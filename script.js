@@ -21,13 +21,12 @@ let lives = 3;
 
 const questionContainer = document.getElementById("question-container");
 const feedback = document.getElementById("feedback");
-const finalScore = document.getElementById("final-score");
-const scoreDisplay = document.getElementById("score");
+const completionMessage = document.getElementById("completion-message");
 const hearts = [document.getElementById("heart1"), document.getElementById("heart2"), document.getElementById("heart3")];
 
 function loadQuestion() {
     if (currentQuestionIndex >= questions.length) {
-        displayFinalScore();
+        displayCompletionMessage();
         return;
     }
 
@@ -70,14 +69,10 @@ function loseLife() {
     }
 }
 
-function displayFinalScore() {
+function displayCompletionMessage() {
     questionContainer.classList.add("hidden");
     feedback.classList.add("hidden");
-    finalScore.classList.remove("hidden");
-    
-    // Calculate the score based on remaining lives
-    const score = lives * 10; // e.g., 10 points per remaining life
-    scoreDisplay.innerText = score;
+    completionMessage.classList.remove("hidden");
 }
 
 loadQuestion();
