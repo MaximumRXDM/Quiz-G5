@@ -11,30 +11,32 @@
         <h1>Group 5 Presentation</h1>
         <p>Website is made by: Daen Mandiel Angostura</p>
     </header>
+
     <div class="quiz-container">
-        <div id="timer" class="timer">
-            Time Left: <span id="timeLeft">20</span> seconds
+        <p class="timer">Time Left: <span id="timeLeft">20</span> seconds</p>
+
+        <div class="question-container">
+            <p class="question" id="questionText"></p>
+            <div class="choices">
+                <button class="choices-btn" id="choice1"></button>
+                <button class="choices-btn" id="choice2"></button>
+                <button class="choices-btn" id="choice3"></button>
+                <button class="choices-btn" id="choice4"></button>
+            </div>
         </div>
-        <div id="questionText" class="question"></div>
-        <div class="choices">
-            <button class="choices-btn">a</button>
-            <button class="choices-btn">b</button>
-            <button class="choices-btn">c</button>
-            <button class="choices-btn">d</button>
+
+        <div class="result" id="result"></div>
+
+        <div class="hearts" id="heartsContainer">
+            ❤️ ❤️ ❤️ ❤️ ❤️ <!-- 5 hearts, one for each life -->
         </div>
-        <div id="result" class="result"></div>
-        <div class="hearts">
-            <img class="heart" src="https://i.ibb.co/KhFtdhr/pngfind-com-minecraft-heart-png-697698.png" alt="Heart" />
-            <img class="heart" src="https://i.ibb.co/KhFtdhr/pngfind-com-minecraft-heart-png-697698.png" alt="Heart" />
-            <img class="heart" src="https://i.ibb.co/KhFtdhr/pngfind-com-minecraft-heart-png-697698.png" alt="Heart" />
-            <img class="heart" src="https://i.ibb.co/KhFtdhr/pngfind-com-minecraft-heart-png-697698.png" alt="Heart" />
-            <img class="heart" src="https://i.ibb.co/KhFtdhr/pngfind-com-minecraft-heart-png-697698.png" alt="Heart" />
-        </div>
+
         <div class="buttons">
             <button id="nextButton">Next Question</button>
-            <button id="compensateButton">Compensate</button>
+            <button id="compensateButton">Compensation Question</button>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
