@@ -11,6 +11,7 @@ let timeLeft = 20;
 
 const questionContainer = document.getElementById("question-container");
 const feedback = document.getElementById("feedback");
+const correctAnswerDisplay = document.getElementById("correct-answer");
 const nextButton = document.getElementById("next-btn");
 const timerDisplay = document.getElementById("timer");
 const completionMessage = document.getElementById("completion-message");
@@ -44,16 +45,18 @@ function loadQuestion() {
 function checkAnswer(selectedOption) {
     clearInterval(timer);
     const questionObj = questions[currentQuestionIndex];
-    
+
     if (selectedOption === questionObj.answer) {
         feedback.innerText = "Correct Answer!";
         feedback.classList.remove("hidden");
+        correctAnswerDisplay.querySelector("span").innerText = questionObj.options[questionObj.answer];
+        correctAnswerDisplay.classList.remove("hidden");
     } else {
         feedback.innerText = `Incorrect! Correct answer: ${questionObj.options[questionObj.answer]}`;
         feedback.classList.remove("hidden");
         loseLife();
     }
-    
+
     nextButton.classList.remove("hidden");
 }
 
@@ -66,14 +69,16 @@ function loseLife() {
 
 function startTimer() {
     timeLeft = 20;
-    timerDisplay.innerText = `Time Left: ${timeLeft}s`;
+    timerDisplay.innerText = `${timeLeft}s`;
     timer = setInterval(() => {
         timeLeft--;
-        timerDisplay.innerText = `Time Left: ${timeLeft}s`;
+        timerDisplay.innerText = `${timeLeft}s`;
         if (timeLeft <= 0) {
             clearInterval(timer);
             feedback.innerText = `Time's up! Correct answer: ${questions[currentQuestionIndex].options[questions[currentQuestionIndex].answer]}`;
             feedback.classList.remove("hidden");
+            correctAnswerDisplay.querySelector("span").innerText = questions[currentQuestionIndex].options[questions[currentQuestionIndex].answer];
+            correctAnswerDisplay.classList.remove("hidden");
             nextButton.classList.remove("hidden");
             loseLife();
         }
@@ -83,11 +88,12 @@ function startTimer() {
 function resetTimer() {
     clearInterval(timer);
     timeLeft = 20;
-    timerDisplay.innerText = `Time Left: ${timeLeft}s`;
+    timerDisplay.innerText = `${timeLeft}s`;
 }
 
 nextButton.onclick = () => {
     feedback.classList.add("hidden");
+    correctAnswerDisplay.classList.add("hidden");
     nextButton.classList.add("hidden");
     currentQuestionIndex++;
     loadQuestion();
